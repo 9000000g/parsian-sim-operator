@@ -1,0 +1,16 @@
+fv-main
+  fv-header
+    .fv-title
+      h2.fv-no-wrap ورود کاربر
+  fv-content.fv-row
+    div(:class="$root.mainClassMin")
+      form(@submit.prevent="login()")
+        div.fv-col-xs-12
+          label.fv-control-label نام کاربری
+          fv-input.fv-form-control(type='text', v-model='user.username', placeholder='نام کاربری خود را وارد کنید.', required)
+        div.fv-col-xs-12
+          label.fv-control-label رمز عبور
+          fv-input.fv-form-control(type='password', v-model='user.password', placeholder='رمز عبور خود را وارد کنید.', required)
+        div.fv-col-xs-12
+          label.fv-control-label
+          fv-button.fv-primary.fv-block(type='submit') ورود
