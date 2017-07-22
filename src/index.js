@@ -44,10 +44,11 @@ const router = new VueRouter({
   ]
 })
 
-const ENV = process.env.NODE_ENV || 'development';
-const SSO_URL = process.env.SSO_URL || (ENV == 'development'? 'https://radtest.pec.ir/sso/v1/oauth2/token': 'https://ssoapi.pec.ir/v1/oauth2/token');
-const CLIENT_ID = process.env.CLIENT_ID || 'b9dc712c952b4aafb481abede0fec4d8';
-const SERVER_URL = process.env.SERVER_URL || (ENV=='development'? 'http://192.168.95.210:8100': 'http://45.33.105.162:5006');
+console.log(process.env);
+const ENV = process.env.NODE_ENV;
+const SSO_URL = process.env.SSO_URL;
+const CLIENT_ID = process.env.CLIENT_ID ;
+const SERVER_URL = process.env.SERVER_URL;
 
 const session = JSON.parse( global.localStorage.getItem('me') );
 const guestUser = {

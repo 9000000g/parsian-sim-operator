@@ -16,9 +16,9 @@ var generateConfig = () => {
       'PKG_VERSION': JSON.stringify(pkg.version),
       'process.env': {
         NODE_ENV: `"${ENV}"`,
-        SSO_URL: `"${process.env.SSO_URL}"`,
-        CLIENT_ID: `"${process.env.CLIENT_ID}"`,
-        SERVER_URL: `"${process.env.SERVER_URL}"`
+        SSO_URL: `"${process.env.SSO_URL || (ENV == 'development'? 'https://radtest.pec.ir/sso/v1/oauth2/token': 'https://ssoapi.pec.ir/v1/oauth2/token')}"`,
+        CLIENT_ID: `"${process.env.CLIENT_ID || 'b9dc712c952b4aafb481abede0fec4d8'}"`,
+        SERVER_URL: `"${process.env.SERVER_URL || (ENV=='development'? 'http://192.168.95.210:8100': 'http://45.33.105.162:5006')}"`
       }
     })
   ]
