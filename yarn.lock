@@ -1930,7 +1930,7 @@ formidable@1.0.x:
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/formidable/-/formidable-1.0.17.tgz#ef5491490f9433b705faa77249c99029ae348559"
 
-framevuerk@^0.7.43:
+framevuerk@0.7.43:
   version "0.7.43"
   resolved "https://registry.yarnpkg.com/framevuerk/-/framevuerk-0.7.43.tgz#e0c351c607fd6e4fe4e2c5986fee61a6764a84df"
 
