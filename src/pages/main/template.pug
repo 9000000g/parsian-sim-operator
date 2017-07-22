@@ -1,7 +1,19 @@
 fv-main
   fv-header
+    fv-button.fv-primary.fv-icon(@click.native="$root.logout()")
+      i.fa.fa-sign-out
     .fv-title
-      h2.fv-no-wrap ورود کاربر
-  fv-content.fv-row
-    div(:class="$root.mainClass")
-      h2 سلام. اینجا لیست یوزرها رو نشون میدم با قابلیت فیلتر کردن.
+      h2.fv-no-wrap لیست درخواست‌ها
+    fv-button.fv-primary.fv-icon(@click.native="$refs.table.fetch()")
+      i.fa.fa-refresh
+  fv-content.fv-no-padding
+    .fv-row
+      div(:class="$root.mainClass")
+        fv-table(
+            ref="table",
+            :api="tableApi",
+            apiRowsKey="data.users_list",
+            apiFinishedKey="!data.next_page",
+            :ajax="$root.axios",
+            :fields="tableFields",
+            @click-row="$router.push('/' + $event.id )")

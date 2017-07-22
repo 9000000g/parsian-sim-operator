@@ -1,0 +1,11 @@
+body{
+  & .success{
+    color: #11a90b;
+  }
+  & .danger{
+    color: #d10d0d;
+  }
+  & .default{
+    color: #777;
+  }
+}
