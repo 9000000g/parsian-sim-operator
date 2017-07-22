@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import framevuerk from 'framevuerk/dist/framevuerk-fa.js'
 import moment from 'moment-jalaali'
 import 'font-awesome/css/font-awesome.css'
+import 'shabnam-font/dist/font-face.css';
 import './index.html'
 import style from './style.scss'
 import _main from './pages/_main'
