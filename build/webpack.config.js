@@ -14,7 +14,12 @@ var generateConfig = () => {
       'CONFIG': JSON.stringify(CONFIG),
       'PKG_NAME': JSON.stringify(pkg.name),
       'PKG_VERSION': JSON.stringify(pkg.version),
-      'process.env': process.env
+      'process.env': {
+        NODE_ENV: `"${ENV}"`,
+        SSO_URL: `"${process.env.SSO_URL}"`,
+        CLIENT_ID: `"${process.env.CLIENT_ID}"`,
+        SERVER_URL: `"${process.env.SERVER_URL}"`
+      }
     })
   ]
   return {
