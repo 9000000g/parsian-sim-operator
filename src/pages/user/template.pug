@@ -1,0 +1,42 @@
+fv-main
+  fv-header
+    .fv-title
+      h2.fv-no-wrap کاربر شماره {{$route.params.id}}
+    fv-button.fv-primary.fv-icon(@click.native="$router.go(-1)")
+      i.fa.fa-arrow-left
+  fv-content.fv-no-padding
+    .fv-row
+      div(:class="$root.mainClass")
+        .fv-col-sm-4
+          .user-part
+            label.user-label تاریخ تولد
+            .user-value {{$root.dateFormat(item.birth_date, false)}}
+        .fv-col-sm-4
+          .user-part
+            label.user-label کد ملی
+            .user-value {{item.national_code}}
+        .fv-col-sm-4
+          .user-part
+            label.user-label کد OTP
+            .user-value {{item.secret_otp}}
+        .fv-col-sm-6
+          .user-part
+            label.user-label تصویر کارت ملی
+            .user-value(v-if="item.image_name")
+              img.user-img(:src="$root.serverUrl + '/' + item.path + '/' + item.image_name")
+        .fv-col-sm-6
+          .user-part
+            label.user-label ویدئو OTP
+            .user-value(v-if="item.video_name")
+              video(controls, preload="true")
+                source(:src="$root.serverUrl + '/' + item.path + '/' + item.video_name", type="video/mp4")
+  fv-footer
+    .fv-grow
+      label.user-label وضعیت فعلی: 
+      span(v-html="$root.statusFormat(item.status)")
+    fv-button.fv-danger.fv-icon(@click.native="changeStatus('r')")
+      i.fa.fa-times
+      =" رد کردن"
+    fv-button.fv-success.fv-icon(@click.native="changeStatus('v')")
+      i.fa.fa-check
+      =" تائید کردن"
