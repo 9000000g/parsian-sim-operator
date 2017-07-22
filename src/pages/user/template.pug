@@ -34,6 +34,9 @@ fv-main
     .fv-grow
       label.user-label وضعیت فعلی: 
       span(v-html="$root.statusFormat(item.status)")
+    fv-button.fv-default.fv-icon(@click.native="changeStatus('n')")
+      i.fa.fa-circle-o-notch.fa-spin
+      =" بررسی نشده"
     fv-button.fv-danger.fv-icon(@click.native="changeStatus('r')")
       i.fa.fa-times
       =" رد کردن"
